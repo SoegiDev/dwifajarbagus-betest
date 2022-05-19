@@ -1,0 +1,10 @@
+### register
+POST http://127.0.0.1:8080/api/auth/signup
+Content-Type: application/json
+
+{
+    "username":"soegidev",
+    "email":"soegidev.id@gmail.com",
+    "account_number":"138219381",
+    "identity_number":"21382193891"
+}
