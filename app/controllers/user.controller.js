@@ -2,10 +2,12 @@ const db = require("../models");
 const config = require("../config/auth.config");
 const {v4 : uuidv4} = require('uuid');
 const User = db.user;
+const dotenv = require('dotenv');
+dotenv.config();
 const redis = require('redis');
 const redisClient = redis.createClient({
-  host: '127.0.0.1',
-  port: 6379
+  host:process.env.REDIS_HOST,
+  port:process.env.REDIS_PORT
 });
 (async () => {
   redisClient.on('error', (err) => {

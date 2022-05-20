@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  mongodb:
+    image: mongo:latest
+    restart: unless-stopped
+    networks:
+      - microservice1
+    ports:
+      - 27017:27017
+    volumes:
+      - db:/data/db
+  redis:
+    image: 'redis:alpine'
+    networks:
+      - microservice1
+    ports:
+      - 6379:6379
+  app:
+    depends_on:
+      - mongodb
+      - redis
+    build: .
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - 8080:8080
+    networks:
+      - microservice1
+    environment:
+      - REDIS_HOST= redis
+      - DB_HOST=mongodb
+      - DB_NAME=$MONGODB_DATABASE
+      - DB_PORT=$MONGODB_DOCKER_PORT
+    stdin_open: true
+    tty: true
+
+networks:
+  microservice1:
+    name: microservice
+volumes:
+  db:
+    name: db
+  redis:
+    name: redis
