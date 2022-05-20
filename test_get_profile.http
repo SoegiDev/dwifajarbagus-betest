@@ -4,6 +4,6 @@
 
 
 ### register
-GET http://127.0.0.1:8080/api/test/profile HTTP/1.1
+GET http://127.0.0.1:8080/api/profile HTTP/1.1
 Content-Type: application/json
-x-access-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODY3ZTg4M2I5NjI5ZWVkYmViOGQ3YiIsImlhdCI6MTY1Mjk4MTQwOCwiZXhwIjoxNjUyOTg1MDA4fQ.kpUT8Vxnn-byMSYlDAcMWz-86VE5Q7eEXlWANEeSHgU
+x-access-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODcwZTY4ZjJmMGM5ZWJmOTk5MjEwMiIsImlhdCI6MTY1MzAxOTA5MiwiZXhwIjoxNjUzMDIyNjkyfQ.d3ropi8rmoGDQeBwFk3Dq5vJgEcFN21Azd4H7xucdEE
