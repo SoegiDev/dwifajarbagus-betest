@@ -13,7 +13,7 @@ services:
     container_name: dbredis
     image: 'redis'
     networks:
-      - microservice
+      - redis
     ports:
       - 6379:6379
   app:
@@ -34,10 +34,13 @@ services:
       - 8080:8080
     networks:
       - microservice
+      - redis
 
 networks:
   microservice:
     name: microservice
+  redis:
+    name: redis
 volumes:
   db:
     name: db
