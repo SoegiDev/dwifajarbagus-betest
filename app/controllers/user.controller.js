@@ -4,10 +4,14 @@ const {v4 : uuidv4} = require('uuid');
 const User = db.user;
 const dotenv = require('dotenv');
 dotenv.config();
+const {
+  REDIS_HOST,
+  REDIS_PORT
+} = process.env;
 const redis = require('redis');
 const redisClient = redis.createClient({
-  host:process.env.REDIS_HOST,
-  port:process.env.REDIS_PORT
+  host:'dbredis',
+  port:REDIS_PORT
 });
 (async () => {
   redisClient.on('error', (err) => {

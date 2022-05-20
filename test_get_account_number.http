@@ -1,9 +1,4 @@
-# GET /api/test/user HTTP/1.1
-# Host: 127.0.0.1:8080
-# x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjI2NmJjMTM4YzU0OGJlYWNlZTFhZiIsImlhdCI6MTY1MDYxNjM4NSwiZXhwIjoxNjUwNzAyNzg1fQ.Le4KRtbHrvwf7tMs65R3gGrkuxPBUQUoBp2waW46Oko
-
-
-### register
+### AccountNumber
 GET http://127.0.0.1:8080/api/accountNumber?code=138219381 HTTP/1.1
 Content-Type: application/json
 x-access-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODY3ZTg4M2I5NjI5ZWVkYmViOGQ3YiIsImlhdCI6MTY1Mjk4MTQwOCwiZXhwIjoxNjUyOTg1MDA4fQ.kpUT8Vxnn-byMSYlDAcMWz-86VE5Q7eEXlWANEeSHgU
