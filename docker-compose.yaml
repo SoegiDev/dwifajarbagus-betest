@@ -13,7 +13,7 @@ services:
     container_name: dbredis
     image: 'redis'
     networks:
-      - redis
+      - microservice
     ports:
       - 6379:6379
   app:
@@ -22,25 +22,20 @@ services:
       - mongodb
       - dbredis
     build: .
+    networks:
+      - microservice
     env_file: ./.env
     environment:
-      - REDIS_HOST=dbredis
+      - REDIS_URL=dbredis
+      - REDIS_PORT=6379
       - DB_HOST=mongodb
       - DB_NAME=$MONGODB_DATABASE
       - DB_PORT=$MONGODB_DOCKER_PORT
-    volumes:
-      - .:/usr/src/app
     ports:
       - 8080:8080
-    networks:
-      - microservice
-      - redis
-
 networks:
   microservice:
     name: microservice
-  redis:
-    name: redis
 volumes:
   db:
     name: db

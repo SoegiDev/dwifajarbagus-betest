@@ -5,13 +5,16 @@ const User = db.user;
 const dotenv = require('dotenv');
 dotenv.config();
 const {
-  REDIS_HOST,
-  REDIS_PORT
+  REDIS_PORT,
+  REDIS_URL
 } = process.env;
 const redis = require('redis');
 const redisClient = redis.createClient({
-  host:'dbredis',
-  port:REDIS_PORT
+  legacyMode: true,
+    socket: {
+        port: REDIS_PORT,
+        host: REDIS_URL
+    }
 });
 (async () => {
   redisClient.on('error', (err) => {
